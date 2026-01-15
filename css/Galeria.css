@@ -1,0 +1,305 @@
+/* Fuentes que se ocupo*/
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+
+*{
+    font-family: "lora" ;
+}
+
+body {
+    padding-top: 100px; 
+}
+
+:root{
+    --color_primario: #F59E0B;
+    --color_secundario: black;
+    --color_texto_light:white;
+    --color_accent:#d4ae63;
+    --borde_dorado: rgba(184, 149, 81, 0.3);
+    --sombra_dorada:rgba(184, 149, 81, 0.4);
+}
+
+/* ajustes generales */
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "rye";
+    color: var(--color_secundario);
+}
+
+/* estilo botones */
+.btn{
+    background-color: var(--color_primario);
+    color: var(--color_texto_light);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.btn:hover{
+    background-color: var(--color_accent);
+    color: var(--color_texto_light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--sombra_dorada) ;
+    transform: translateY(-4px);
+}
+
+
+/* estilo tarjetas */
+.border-dorado {
+    border: 1px solid var(--borde_dorado); /* Dorado sutil */
+    transition: all 0.4s ease;
+}
+
+
+/* ANIMACIONES JAVA */
+/* Estado inicial: Invisible y un poco movido hacia abajo */
+.revelar {
+    opacity: 0;
+    transform: translateX(-120px);
+    transition: all 1.5s ease-out; /* Controla la suavidad */
+}
+
+/* --- CONFIGURACIÓN DE DIRECCIONES --- */
+
+/* 1. De Abajo hacia Arriba (El que ya tienes) */
+.revelar.desde-abajo {
+    transform: translateY(50px);
+}
+
+/* 2. De Arriba hacia Abajo */
+.revelar.desde-arriba {
+    transform: translateY(-50px);
+}
+
+/* 3. De Izquierda a Derecha */
+.revelar.desde-izquierda {
+    transform: translateX(-50px);
+}
+
+/* 4. De Derecha a Izquierda */
+.revelar.desde-derecha {
+    transform: translateX(50px);
+}
+
+/* --- ESTADO ACTIVO UNIVERSAL --- */
+/* Cuando el JS añade .active, todos vuelven a su posición original (0,0) */
+.revelar.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Retrasos personalizados para cada columna */
+.revelar-delay-1 { transition-delay: 0.1s; }
+.revelar-delay-2 { transition-delay: 0.2s; }
+.revelar-delay-3 { transition-delay: 0.3s; }
+.revelar-delay-4 { transition-delay: 0.4s; }
+.revelar-delay-5 { transition-delay: 0.5s; }
+
+/* HEADER */
+.navbar {
+    letter-spacing: 1px;
+    background-color: rgba(255, 255, 255, 0.9) !important; 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-brand img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-link {
+    color: var(--color_secundario) !important;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem !important;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--color_primario) !important;
+    transform: scale(1.2);
+}
+
+/* Estilo del botón "CITAS" */
+.boton-citas {
+    background-color: var(--color_secundario);
+    color: var(--color_texto_light);
+    border: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+    transition: transform 0.2s;
+    text-decoration: none;
+}
+
+.boton-citas:hover {
+    background-color: var(--color_primario);
+    transform: scale(1.2);
+}
+
+/* Ajuste de iconos sociales */
+.bi {
+    transition: color 0.3s;
+}
+
+.bi:hover {
+    color: var(--color_primario);
+    transform: scale(1.5);
+}
+
+.logo-custom {
+    height: 80px !important; 
+    width: auto;  
+    object-fit: contain;
+}
+
+.navbar {
+    min-height: 90px; 
+    align-items: flex-start;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+
+/* hero */
+
+.carousel-caption {
+    top: 0;        
+    bottom: 0;     
+    left: 0;
+    right: 0;
+    z-index: 2;    
+    padding-bottom: 0; 
+}
+
+.shadow-overlay {
+    filter: brightness(0.5);
+}
+
+.carousel-caption h1 {
+    color: var(--color_primario);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+}
+
+/* logos */
+/* Contenedor principal */
+.logo-slider {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* La fila que se mueve */
+.logo-track {
+    display: flex;
+    width: calc(250px * 10); /* Ancho de cada logo * total de logos (incluyendo duplicados) */
+    animation: scroll-infinito 20s linear infinite;
+}
+
+/* Cada logo individual */
+.slide_logo {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.slide_logo img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+.slide_logo img:hover {
+    transform: scale(1.1);
+}
+
+/* animación de los logos */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Se mueve exactamente la mitad del ancho total del track */
+        transform: translateX(calc(-250px * 5)); 
+    }
+}
+
+/* GALERIA */
+/* Altura uniforme para las imágenes de la galería */
+.gallery-item img {
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Efectos al pasar el mouse (Hover) */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom suave */
+}
+
+/* carusel */
+#galeriaCarrusel .carousel-item img {
+    height: 200px; /* Ajusta esta altura a tu gusto */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+}
+
+
+/* footer */
+.footer{
+    background-color: var(--color_secundario); /* Gris Oxford en lugar de negro */
+    color: var(--color_texto_light);
+    font-family: 'rye' ; /* Usando tu fuente del menú */
+}
+
+.footer-title {
+    color: var(--color_primario); /* Dorado para títulos */
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-contact-info a {
+    color: var(--color_texto_light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color_primario);
+    padding-left: 5px; /* Efecto sutil de movimiento */
+}
+
+.footer-contact-info p {
+    font-size: 0.9rem;
+    color: var(--color_texto_light);
+}
+
+.social-icon{
+    transition: transform 0.3s ease-in-out;
+}
+.social-icon:hover {
+    transform: translateY(-3px);
+}
+
+.footer-logo{
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo:hover{
+    transform: scale(1.1);
+}
