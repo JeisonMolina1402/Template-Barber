@@ -25,18 +25,6 @@ document.addEventListener("DOMContentLoaded", function() {
     elementosAnimar.forEach(el => observer.observe(el));
 });
 
-// notificacion formulario
-
-// Manejo simple del envío del formulario
-const contactForm = document.querySelector('#contactForm');
-if(contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('¡Gracias por escribirnos! En breve un maestro barbero se pondrá en contacto contigo.');
-        contactForm.reset();
-    });
-}
-
 // galeria
 
 // Función para abrir el Lightbox
@@ -89,4 +77,33 @@ function solicitarProducto(nombreProducto) {
 
       window.location.href = `https://wa.me/1234567890?text=${mensaje}`;
     });
-  
+
+// Manejo simple del envío del formulario
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // 1. Tu número de WhatsApp (sin el +)
+    const telBarberia = "593981766228"; 
+
+    // 2. Obtener los datos (usando los IDs que ya configuramos)
+    const nombre = document.getElementById('nombreC').value;
+    const correo = document.getElementById('correoC').value || "No indicado";
+    const telCliente = document.getElementById('telC').value;
+    const asunto = document.getElementById('asuntoC').value;
+    const mensaje = document.getElementById('mensajeC').value;
+
+    // 3. Crear el mensaje para WhatsApp
+    const textoWA = `*MENSAJE DESDE LA WEB*%0A` +
+                    `--------------------------%0A` +
+                    `*Nombre:* ${nombre}%0A` +
+                    `*Teléfono:* ${telCliente}%0A` +
+                    `*Correo:* ${correo}%0A` +
+                    `*Asunto:* ${asunto}%0A` +
+                    `*Mensaje:* ${mensaje}`;
+
+    // 4. Abrir WhatsApp en una pestaña nueva
+    window.open(`https://wa.me/${telBarberia}?text=${textoWA}`, '_blank');
+
+    // 5. ¡ESTA ES LA LÍNEA NUEVA! Limpia todos los campos del formulario
+    e.target.reset();
+});
