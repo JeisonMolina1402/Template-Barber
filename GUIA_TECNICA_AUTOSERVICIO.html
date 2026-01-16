@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Configuración - The Gentleman's Barber Club</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #e0e0e0; background-color: #121212; max-width: 900px; margin: auto; padding: 40px; }
+        .container { background-color: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #d4af37; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        h1 { color: #d4af37; text-align: center; text-transform: uppercase; letter-spacing: 2px; border-bottom: 2px solid #d4af37; padding-bottom: 10px; }
+        h2 { color: #d4af37; margin-top: 30px; border-left: 4px solid #d4af37; padding-left: 15px; }
+        p { margin-bottom: 15px; }
+        code { background-color: #2d2d2d; color: #f8f8f2; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', Courier, monospace; font-size: 0.9em; border: 1px solid #444; }
+        .warning { background-color: #332b00; border: 1px solid #d4af37; padding: 15px; border-radius: 5px; color: #ffd700; font-weight: bold; margin: 20px 0; }
+        .step { margin-bottom: 25px; padding: 20px; background: #252525; border-radius: 8px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.8em; color: #777; border-top: 1px solid #333; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Manual de Usuario - Sin Soporte</h1>
+    
+    <p>Este documento contiene toda la información técnica necesaria para que usted mismo personalice y publique este template. Al adquirir este producto, el comprador asume la responsabilidad total de su edición.</p>
+
+    <div class="warning">
+        AVISO IMPORTANTE: No se brinda soporte técnico personalizado. Si usted daña el código o las rutas de los archivos, deberá descargar nuevamente el archivo original de la plataforma de compra.
+    </div>
+
+    <section class="step">
+        <h2>1. Edición de Textos y Datos</h2>
+        <p>Para cambiar nombres, descripciones o precios, abra los archivos <code>.html</code> con un editor de texto (se recomienda <strong>Visual Studio Code</strong> o <strong>Sublime Text</strong>).</p>
+        <ul>
+            <li><strong>Precios:</strong> Busque la etiqueta <code>$15.00</code> y cámbiela por su valor local.</li>
+            <li><strong>Dirección:</strong> Localice el texto dentro del <code>&lt;footer&gt;</code> al final de cada página.</li>
+            <li><strong>WhatsApp:</strong> Busque el enlace <code>href="https://wa.me/1234567890"</code> y reemplace los números después del <code>/</code> con su número (incluya código de país, sin el signo +).</li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>2. Cambio de Imágenes y Logo</h2>
+        <p>Todas las imágenes se encuentran en la carpeta <code>/images</code>. Para que el sitio no se rompa, debe respetar lo siguiente:</p>
+        <ul>
+            <li><strong>Logo:</strong> Su nuevo logo debe llamarse exactamente <code>logo barber.png</code> y ser de formato PNG transparente.</li>
+            <li><strong>Fotos de Galería:</strong> Si reemplaza una foto, asegúrese de que la nueva tenga las mismas dimensiones (ejemplo: 800x600px) para mantener la alineación.</li>
+            <li><strong>Nombres de archivos:</strong> No use espacios ni tildes en los nombres de las fotos (ejemplo: use <code>corte_moderno.jpg</code>, NO <code>corte moderno.jpg</code>).</li>
+        </ul>
+    </section>
+
+    <section class="step">
+        <h2>3. Publicación (Hosting)</h2>
+        <p>Usted puede subir estos archivos a cualquier hosting que soporte HTML estático:</p>
+        <ol>
+            <li>Suba el contenido completo del ZIP a la carpeta raíz de su servidor (usualmente llamada <code>public_html</code> o <code>www</code>).</li>
+            <li>Asegúrese de que el archivo <code>index.html</code> esté en la carpeta principal.</li>
+            <li>Verifique que las carpetas <code>/css</code>, <code>/images</code> y <code>/JavaScript</code> se hayan subido correctamente.</li>
+        </ol>
+    </section>
+
+    <section class="step">
+        <h2>4. Resolución de Problemas (FAQ)</h2>
+        <ul>
+            <li><strong>¿Por qué no se ven las fotos?</strong> Verifique que no haya movido las fotos fuera de la carpeta <code>/images</code>.</li>
+            <li><strong>¿Por qué no cargan los estilos (fondo blanco)?</strong> Asegúrese de no haber borrado la carpeta <code>/css</code>.</li>
+            <li><strong>¿El botón de WhatsApp no abre?</strong> Revise que el enlace empiece por <code>https://wa.me/</code> seguido de su número completo.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        Template Diseñado por Jeison Molina. Todos los derechos reservados.<br>
+        Venta Final - Producto Auto-Gestionable.
+    </div>
+</div>
+
+</body>
+</html>

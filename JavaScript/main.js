@@ -87,6 +87,6 @@ function solicitarProducto(nombreProducto) {
         `📅 *Fecha:* ${fecha}%0A` +
         `⏰ *Hora:* ${hora}`;
 
-      window.location.href = `https://wa.me/593981766228?text=${mensaje}`;
+      window.location.href = `https://wa.me/1234567890?text=${mensaje}`;
     });
   
