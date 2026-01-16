@@ -3,108 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual Maestro de Configuración - Barber Club</title>
+    <title>Manual Maestro de Configuración - The Gentleman's Barber Club</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #e0e0e0; background-color: #0f0f0f; max-width: 1000px; margin: auto; padding: 40px; }
-        .card { background-color: #1a1a1a; padding: 30px; border-radius: 12px; border: 1px solid #d4af37; box-shadow: 0 10px 30px rgba(0,0,0,0.7); }
-        h1 { color: #d4af37; text-align: center; text-transform: uppercase; border-bottom: 2px solid #d4af37; padding-bottom: 15px; }
-        h2 { color: #d4af37; margin-top: 40px; border-left: 5px solid #d4af37; padding-left: 15px; background: rgba(212, 175, 55, 0.1); }
-        h3 { color: #f59e0b; margin-top: 25px; }
-        code { background-color: #2d2d2d; color: #f8f8f2; padding: 3px 8px; border-radius: 4px; font-family: monospace; border: 1px solid #444; }
-        .highlight { color: #ffd700; font-weight: bold; }
-        .note { background: #221a00; border: 1px solid #d4af37; padding: 20px; border-radius: 8px; color: #ffd700; margin: 25px 0; }
-        .file-tree { background: #000; padding: 15px; border-radius: 5px; font-family: monospace; color: #00ff00; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border: 1px solid #333; padding: 12px; text-align: left; }
-        th { background: #222; color: #d4af37; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #e0e0e0; background-color: #0a0a0a; max-width: 1100px; margin: auto; padding: 40px; }
+        .master-card { background-color: #161616; padding: 40px; border-radius: 15px; border: 1px solid #d4af37; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        h1 { color: #d4af37; text-align: center; font-size: 2.5em; text-transform: uppercase; border-bottom: 3px solid #d4af37; padding-bottom: 20px; }
+        h2 { color: #d4af37; margin-top: 50px; background: rgba(212, 175, 55, 0.1); padding: 10px 20px; border-radius: 5px; border-left: 10px solid #d4af37; }
+        h3 { color: #f59e0b; margin-top: 30px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .code-block { background: #000; color: #00ff00; padding: 20px; border-radius: 8px; font-family: 'Consolas', monospace; overflow-x: auto; border: 1px solid #333; margin: 15px 0; font-size: 0.9em; }
+        .important { background: #332b00; border: 2px solid #ffd700; padding: 20px; border-radius: 10px; color: #ffd700; margin: 30px 0; }
+        .badge { background: #d4af37; color: #000; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8em; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #1f1f1f; }
+        th, td { border: 1px solid #444; padding: 15px; text-align: left; }
+        th { background: #2d2d2d; color: #d4af37; }
+        .folder { color: #f59e0b; font-weight: bold; }
+        .step-list { padding-left: 20px; }
+        .step-list li { margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<div class="card">
+<div class="master-card">
     <h1>Manual Maestro de Configuración</h1>
-    <p>Este documento es la guía definitiva para personalizar cada rincón de su nueva plantilla web. Lea atentamente cada sección para realizar cambios sin necesidad de soporte técnico.</p>
+    <p>Este documento es la guía definitiva para personalizar cada rincón de su nueva plantilla web. Está diseñado para que usted tenga el control total del sitio, desde los textos básicos hasta la lógica interna de los formularios.</p>
 
-    <div class="note">
-        <strong>REGLA DE ORO:</strong> Antes de modificar cualquier archivo, cree una copia de seguridad de la carpeta completa. Si el sitio deja de verse bien, simplemente restaure su copia de seguridad.
+    <div class="important">
+        <strong>REGLA DE ORO:</strong> Antes de realizar cualquier cambio, cree una copia de seguridad de la carpeta original. No se brinda soporte técnico personalizado; este manual contiene todas las respuestas necesarias. Se recomienda usar <strong>Visual Studio Code</strong> para editar los archivos.
     </div>
 
-    <h2>1. Estructura de Archivos</h2>
-    <p>Para que el sitio funcione, los archivos deben mantener esta organización exacta:</p>
-    <div class="file-tree">
+    <h2>1. Estructura del Proyecto</h2>
+    <p>Para que el sitio funcione, los archivos deben mantener esta organización. Si mueve un archivo de carpeta, los enlaces o imágenes dejarán de funcionar:</p>
+    <div class="code-block">
         /Proyecto-Barberia<br>
-        ├── index.html (Página de Inicio)<br>
-        ├── Contactanos.html (Formularios y Mapa)<br>
-        ├── ... (Demás páginas .html)<br>
-        ├── /css (Estilos y Colores)<br>
-        ├── /images (Fotos y Logos)<br>
-        ├── /JavaScript (Lógica de WhatsApp y Animaciones)<br>
-        └── /logos (Marcas aliadas)
+        ├── index.html (Inicio)<br>
+        ├── Contactanos.html (Citas y Mapa)<br>
+        ├── Nosotros.html, Galeria.html (Páginas secundarias)<br>
+        ├── /css (Estilos, colores y fuentes)<br>
+        ├── /images (Todas las fotografías y logos)<br>
+        ├── /JavaScript (Lógica de envío a WhatsApp)<br>
+        └── /logos (Logos de marcas aliadas)
     </div>
 
-    <h2>2. Edición de Textos y Contenido</h2>
-    <p>Abra los archivos <code>.html</code> con un editor (como Visual Studio Code).</p>
-    <h3>Cambiar Nombres y Títulos:</h3>
-    <p>Busque el texto entre etiquetas, por ejemplo: <code>&lt;h1&gt;Estamos Aquí para Atenderte&lt;/h1&gt;</code>. Cambie solo el texto central.</p>
-    <h3>Cambiar Precios:</h3>
-    <p>Localice los valores con el símbolo <code>$</code>. Ejemplo: <code>&lt;option&gt;Corte de Cabello - $15.00&lt;/option&gt;</code>. Edite el valor numérico a su conveniencia.</p>
+    <h2>2. Configuración de WhatsApp (Lo más importante)</h2>
+    <p>Todo el sistema de envío de mensajes (Reserva de Citas y Formulario de Contacto) se configura en un solo lugar.</p>
+    <ul class="step-list">
+        <li>Abra el archivo <span class="folder">JavaScript/main.js</span>.</li>
+        <li>Busque la línea: <code>const telBarberia = "593981766228";</code></li>
+        <li>Reemplace el número entre comillas por el suyo (Código de país + número, sin el símbolo +).</li>
+        <li><strong>Formato de mensaje:</strong> En el mismo archivo, puede editar el texto que le llegará a su celular. El código <code>%0A</code> representa un salto de línea (Enter). No lo borre si desea mantener el orden del mensaje.</li>
+    </ul>
 
-    <h2>3. Personalización de WhatsApp (Vital)</h2>
-    <p>El sitio tiene dos tipos de envío a WhatsApp que debe configurar en el archivo <code>JavaScript/main.js</code>:</p>
-    <div class="step">
-        <p>1. Busque la línea: <span class="highlight">const telBarberia = "1234567890";</span></p>
-        <p>2. Reemplace el número entre comillas por su número completo (Código de país + número, sin el signo +).</p>
-        <p>3. Esto actualizará automáticamente el formulario de <strong>Reserva</strong> y el de <strong>Contacto</strong>.</p>
+    <h2>3. Personalización del Formulario de Citas</h2>
+    <h3>A. Agregar o Quitar Barberos</h3>
+    <p>En <code>Contactanos.html</code>, busque el bloque de "Elige a tu Barbero". Para añadir uno nuevo, copie y pegue este código:</p>
+    <div class="code-block">
+        &lt;div class="col-md-6"&gt;<br>
+        &nbsp;&nbsp;&lt;input type="radio" class="btn-check" name="barbero" id="barb3" value="NOMBRE NUEVO"&gt;<br>
+        &nbsp;&nbsp;&lt;label class="btn btn-reserva-transparente w-100 p-3" for="barb3"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="bi bi-person-fill me-2"&gt;&lt;/i&gt; NOMBRE NUEVO<br>
+        &nbsp;&nbsp;&lt;/label&gt;<br>
+        &lt;/div&gt;
+    </div>
+    <p><span class="badge">Atención:</span> El <code>id="barb3"</code> y el <code>for="barb3"</code> deben ser iguales entre sí, pero diferentes a los de los otros barberos (use barb4, barb5, etc.).</p>
+
+    <h3>B. Cambiar Opciones de Asunto y Comentarios</h3>
+    <p>Busque la etiqueta <code>&lt;select&gt;</code> en el formulario de contacto. Para cambiar una opción, edite el texto dentro de <code>&lt;option&gt;</code>:</p>
+    <div class="code-block">
+        &lt;option value="Consulta General"&gt;Consulta General&lt;/option&gt;
     </div>
 
-    <h2>4. Gestión de Imágenes</h2>
+    <h2>4. Gestión de Servicios y Productos</h2>
+    <h3>A. Editar o Eliminar Secciones</h3>
+    <p>Cada sección (Servicios, Nosotros, Galería) está envuelta en etiquetas <code>&lt;section&gt;</code>. Para eliminar una, borre desde la etiqueta de apertura hasta la de cierre. Para agregar una, duplique una sección existente.</p>
+    
+    <h3>B. Cambiar Productos de Venta</h3>
+    <p>En <code>Venta de Productos.html</code>, cada producto es una "Card". Usted puede:</p>
+    <ul>
+        <li><strong>Cambiar Imagen:</strong> Reemplace el nombre en <code>src="images/producto.jpg"</code>.</li>
+        <li><strong>Cambiar Precio:</strong> Busque el texto con el símbolo <code>$</code> y edítelo.</li>
+    </ul>
+
+    <h2>5. Guía de Imágenes y Mapa</h2>
     <table>
         <tr>
             <th>Elemento</th>
-            <th>Ubicación / Nombre del archivo</th>
-            <th>Recomendación</th>
+            <th>Ubicación</th>
+            <th>Tamaño / Formato</th>
         </tr>
         <tr>
             <td>Logo Principal</td>
-            <td><code>images/logo barber.png</code></td>
-            <td>Use formato PNG transparente.</td>
+            <td><code>/images/logo barber.png</code></td>
+            <td>PNG transparente (250x150px)</td>
         </tr>
         <tr>
-            <td>Fotos Galería</td>
-            <td><code>images/barber1.jpg</code> hasta <code>barber6.jpg</code></td>
-            <td>Tamaño ideal: 800x600px.</td>
+            <td>Fotos de Cortes</td>
+            <td><code>/images</code></td>
+            <td>600x600px (Cuadradas)</td>
         </tr>
         <tr>
-            <td>Heros (Fondos)</td>
-            <td><code>images/contactanos/hero1.jpg</code></td>
-            <td>Use imágenes de alta resolución.</td>
+            <td>Mapa Google</td>
+            <td><code>Contactanos.html</code></td>
+            <td>Pegue el link de "Insertar Mapa" en el <code>src</code> del <code>iframe</code>.</td>
         </tr>
     </table>
 
-    <h2>5. Configuración del Mapa (Google Maps)</h2>
-    <p>Para cambiar la ubicación del mapa en <code>Contactanos.html</code>:</p>
+    <h2>6. Colores, Fuentes y Estilos (Avanzado)</h2>
+    <p>Si desea cambiar el color dorado del sitio, abra <span class="folder">css/style.css</span> y localice la sección <code>:root</code> al principio del archivo:</p>
+    <div class="code-block">
+        --color_primario: #F59E0B; /* Cambie este código hexadecimal por su color */<br>
+        --color_secundario: black; /* Color de fondos y menús */
+    </div>
+    <p>Para cambiar la tipografía global, modifique la línea: <code>*{ font-family: "lora"; }</code> por la fuente de su preferencia cargada desde Google Fonts.</p>
+
+    <h2>7. Publicación Final</h2>
+    <p>Para subir el sitio a internet:</p>
     <ol>
-        <li>Vaya a Google Maps y busque su dirección.</li>
-        <li>Haga clic en "Compartir" > "Insertar un mapa".</li>
-        <li>Copie solo el enlace que aparece dentro de <code>src="..."</code>.</li>
-        <li>Pegue ese enlace dentro de la etiqueta <code>&lt;iframe src="AQUÍ_VA_EL_LINK"&gt;</code> en su archivo HTML.</li>
+        <li>Contrate un servicio de Hosting y Dominio.</li>
+        <li>Suba el <strong>contenido</strong> de la carpeta del proyecto a la carpeta <code>public_html</code> de su servidor.</li>
+        <li>Asegúrese de que el archivo <code>index.html</code> esté en la raíz, no dentro de subcarpetas adicionales.</li>
     </ol>
 
-    <h2>6. Colores y Estilos (Avanzado)</h2>
-    <p>Si desea cambiar el color dorado principal, abra <code>css/style.css</code> (o el CSS de la página correspondiente) y busque la sección <code>:root</code>:</p>
-    <code>--color_primario: #F59E0B;</code>
-    <p>Cambie el código Hexadecimal (#F59E0B) por el color de su preferencia.</p>
-
-    <h2>7. Publicación en Internet</h2>
-    <p>Una vez terminados los cambios:</p>
-    <ol>
-        <li>Suba todos los archivos de la carpeta raíz a su hosting (vía FTP o Panel de Control).</li>
-        <li>Asegúrese de que el archivo <code>index.html</code> no esté dentro de ninguna carpeta para que sea la página de entrada.</li>
-    </ol>
-
-    <div class="footer" style="text-align: center; padding: 40px; border-top: 1px solid #333; color: #777;">
-        © 2026 Template Profesional Barberia - Jeison Molina. <br>
-        Documento de autoservicio para el comprador final.
+    <div style="text-align: center; margin-top: 60px; padding: 20px; border-top: 1px solid #333; color: #555; font-size: 0.8em;">
+        © 2026 The Gentleman's Barber Club - Manual de Propiedad Exclusiva para Compradores.<br>
+        Desarrollado por Jeison Molina.
     </div>
 </div>
 
